@@ -82,6 +82,7 @@ AActor* APPPowerPoleDoubleHologram::Construct(TArray< AActor* >& out_children, F
 	if (ret->IsA(APPBuildablePole::StaticClass())) {
 		auto buildable = Cast<APPBuildablePole>(ret);
 		buildable->setPole2Location(newLocation);
+		buildable->addLocation = newLocation;
 	}
 
 	return ret;

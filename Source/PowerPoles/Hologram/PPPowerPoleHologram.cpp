@@ -69,14 +69,13 @@ void APPPowerPoleHologram::SetHologramLocationAndRotation(const FHitResult& hitR
 		FRotator rotation = this->GetActorRotation();
 		if (hitResult.Actor->IsA(AFGBuildableFoundation::StaticClass())) {
 			rotation.Yaw = hitResult.Actor->GetActorRotation().Yaw + (mScrollRotation * 9) % 360;
-
-			if (abs(hitResult.ImpactPoint.Z) - abs(hitResult.Actor->GetActorLocation().Z) > 0) {
-				rotation.Pitch = -90;
-				location.Z += 30;
-			}
-			else {
+			if (hitResult.ImpactPoint.Z - hitResult.Actor->GetActorLocation().Z > 0) {
 				rotation.Pitch = 90;
 				location.Z -= 30;
+			}
+			else {
+				rotation.Pitch = -90;
+				location.Z += 30;
 			}
 
 			rotateComponent(powerConnection, FRotator(-90, 0, 0));
