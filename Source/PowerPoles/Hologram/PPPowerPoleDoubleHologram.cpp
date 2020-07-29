@@ -23,6 +23,9 @@ void APPPowerPoleDoubleHologram::BeginPlay() {
 		if (component->GetName() == "PowerPole2") {
 			powerPoleMesh2 = component;
 		}
+		else if (component->GetName() == "PowerConnection1") {
+			powerConnection = component;
+		}
 		else if (component->GetName() == "PowerConnection2") {
 			powerConnection2 = component;
 		}

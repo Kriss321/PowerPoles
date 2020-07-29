@@ -20,7 +20,7 @@ void APPBuildablePole::BeginPlay() {
 		else if (component->GetName() == "PowerPole2") {
 			mPowerPole2 = Cast<UStaticMeshComponent>(component);
 		}
-		else if (component->GetName() == "PowerConnection") {
+		else if (component->GetName() == "PowerConnection1" || component->GetName() == "PowerConnection") {
 			mPowerConnection1 = Cast<UFGPowerConnectionComponent>(component);
 		}
 		else if (component->GetName() == "PowerConnection2") {
